@@ -1,15 +1,20 @@
+from palette import Palette
+
 presets = {
     "default": {
         "xWidth": 4.0,
         "yWidth": 4.0,
         "centrePos": (0, 0),
 
-        "redWeight": 1.0,
-        "redPow": 1/4,
-        "greenWeight": 1.0,
-        "greenPow": 1/4,
-        "blueWeight": 1.0,
-        "bluePow": 1/4
+        "palette": Palette([
+            ((0, 0, 0), 0),
+            ((144, 144, 144), 0.1),
+            ((171, 171, 171), 0.2),
+            ((203, 203, 203), 0.4),
+            ((224, 224, 224), 0.6),
+            ((241, 241, 241), 0.8),
+            ((255, 255, 255), 1)
+        ])
     },
 
     "inverted": {
@@ -17,12 +22,15 @@ presets = {
         "yWidth": 4.0,
         "centrePos": (0, 0),
 
-        "redWeight": 0.05,
-        "redPow": -0.2,
-        "greenWeight": 0.05,
-        "greenPow": -0.2,
-        "blueWeight": 0.05,
-        "bluePow": -0.2
+        "palette": Palette([
+            ((255, 255, 255), 0),
+            ((112, 112, 112), 0.1),
+            ((84, 84, 84), 0.2),
+            ((52, 52, 52), 0.4),
+            ((31, 31, 31), 0.6),
+            ((14, 14, 14), 0.8),
+            ((0, 0, 0), 1)
+        ])
     },
 
     "red": {
@@ -30,11 +38,14 @@ presets = {
         "yWidth": 4.0,
         "centrePos": (0, 0),
 
-        "redWeight": 1,
-        "redPow": 0.25,
-        "greenWeight": 0,
-        "greenPow": 1,
-        "blueWeight": 0,
-        "bluePow": 1
+        "palette": Palette([
+            ((0, 0, 0), 0),
+            ((144, 0, 0), 0.1),
+            ((171, 84, 84), 0.2),
+            ((203, 52, 52), 0.4),
+            ((224, 31, 31), 0.6),
+            ((241, 14, 14), 0.8),
+            ((255, 0, 0), 1)
+        ])
     }
 }

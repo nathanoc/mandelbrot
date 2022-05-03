@@ -2,6 +2,7 @@ from PIL import Image
 import math
 import time
 import presets
+from palette import Palette
 
 width = int(input("Enter width in pixels: "))
 height = width
@@ -21,22 +22,17 @@ if selectedPresetName != "custom":
     xWidth = selectedPreset["xWidth"]
     yWidth = selectedPreset["yWidth"]
     centrePos = selectedPreset["centrePos"]
-    redWeight = selectedPreset["redWeight"]
-    redPow = selectedPreset["redPow"]
-    greenWeight = selectedPreset["greenWeight"]
-    greenPow = selectedPreset["greenPow"]
-    blueWeight = selectedPreset["blueWeight"]
-    bluePow = selectedPreset["bluePow"]
+    palette = selectedPreset["palette"]
 else:
     xWidth = float(input("Enter xWidth: "))
     yWidth = float(input("Enter yWidth: "))
     centrePos = (float(input("Enter centrePosX: ")), float(input("Enter centrePosY: ")))
-    redWeight = float(input("Enter redWeight: "))
-    redPow = float(input("Enter redPow: "))
-    greenWeight = float(input("Enter greenWeight: "))
-    greenPow = float(input("Enter greenPow: "))
-    blueWeight = float(input("Enter blueWeight: "))
-    bluePow = float(input("Enter bluePow: "))
+    
+    print("Palette preset list:")
+    for key in presets.presets.keys():
+        print(key)
+    selectedPaletteName = input("Enter palette preset name: ")
+    palette = presets.presets[selectedPaletteName]["palette"]
 
 rowsPerOutput = 256
 startTime = time.time()
@@ -63,11 +59,9 @@ for yInt in range(int(width/2), int(-width/2), -1):
         if Z[0] ** 2.0 + Z[1] ** 2.0 < 4.0:
             pixels.append((0,0,0))
         else:
-            pixels.append((
-                int(math.pow(float(iteration) / float(iterations), redPow) * 255.0 * redWeight),
-                int(math.pow(float(iteration) / float(iterations), greenPow) * 255.0 * greenWeight),
-                int(math.pow(float(iteration) / float(iterations), bluePow) * 255.0 * blueWeight)
-            ))
+            pixels.append(
+                palette.getColour(iteration, iterations)
+            )
     if yInt % rowsPerOutput == 0 and height - int(height/2 + yInt) != 0:
         rowsRemaining = int(height/2 + yInt)
         rowsCompleted = height - int(height/2 + yInt)
