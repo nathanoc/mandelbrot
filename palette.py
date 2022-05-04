@@ -1,8 +1,17 @@
 class Palette:
-    coloursAtPercentages = []
+    coloursAtPercentages = [] # ((r, g, b), frac)
 
-    def __init__(self, coloursAtPercentages):
-        self.coloursAtPercentages = coloursAtPercentages
+    def __init__(self, coloursAtPercentages, increment = 0):        
+        if increment == 0:
+            self.coloursAtPercentages = coloursAtPercentages
+        else:
+            coloursAtPercentages = coloursAtPercentages * int(1 / (increment * len(coloursAtPercentages)))
+            coloursAtPercentages.append(coloursAtPercentages[1])
+            for i in range(len(coloursAtPercentages)):
+                coloursAtPercentages[i] = (coloursAtPercentages[i], i * increment)
+            coloursAtPercentages[-1] = (coloursAtPercentages[-1][0], 1)
+            self.coloursAtPercentages = coloursAtPercentages
+                
 
     def getColour(self, iteration, iterations):
         frac = iteration / iterations

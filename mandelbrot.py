@@ -30,11 +30,12 @@ else:
     
     print("Palette preset list:")
     for key in presets.presets.keys():
-        print(key)
+        print(" - " + key)
     selectedPaletteName = input("Enter palette preset name: ")
     palette = presets.presets[selectedPaletteName]["palette"]
 
 rowsPerOutput = 256
+
 startTime = time.time()
 
 for yInt in range(int(width/2), int(-width/2), -1):
