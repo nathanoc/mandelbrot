@@ -13,8 +13,8 @@ iterations = int(input("Enter max iterations (recommended = 500): "))
 
 print("Preset list:")
 for key in presets.presets.keys():
-    print(key)
-print("custom")
+    print(" - " + key)
+print(" - custom")
 selectedPresetName = input("Enter preset name: ")
 if selectedPresetName != "custom":
     selectedPreset = presets.presets[selectedPresetName]
@@ -76,7 +76,9 @@ print("Fractal completed - saving image")
 print("Elapsed: " + str(time.time() - startTime))
 
 image.putdata(pixels)
-image.save("mandelbrot.png")
 
-print("Image saved.")
+imageDirectory = f"images/{selectedPresetName}.png"
+image.save(imageDirectory)
+
+print(f"Image saved to {imageDirectory}.")
 print("Total Elapsed: " + str(time.time() - startTime))
