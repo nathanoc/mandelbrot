@@ -34,7 +34,7 @@ else:
     selectedPaletteName = input("Enter palette preset name: ")
     palette = presets.presets[selectedPaletteName]["palette"]
 
-rowsPerOutput = 256
+rowsPerOutput = int(input("Enter rows per console output: "))
 
 startTime = time.time()
 
