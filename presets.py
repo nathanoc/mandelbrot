@@ -15,6 +15,8 @@ presets = {
             ((241, 241, 241), 0.8),
             ((255, 255, 255), 1)
         ])
+        "showInPaletteList": True,
+        "showInPaletteList": True,
     },
 
     "red": {
@@ -31,6 +33,7 @@ presets = {
             ((241, 0, 0), 0.8),
             ((255, 0, 0), 1)
         ])
+        "showInPaletteList": True,
     },
 
     "loopingred": {
@@ -42,6 +45,7 @@ presets = {
             (0, 0, 0),
             (255, 0, 0)
         ], increment = 0.02)
+        "showInPaletteList": True,
     },
 
     "cyan": {
@@ -58,6 +62,7 @@ presets = {
             ((0, 241, 241), 0.8),
             ((0, 255, 255), 1)
         ])
+        "showInPaletteList": True,
     },
 
     "loopingcyan": {
@@ -69,6 +74,7 @@ presets = {
             (0, 0, 0),
             (0, 255, 255)
         ], increment = 0.02)
+        "showInPaletteList": True,
     },
 
     "seahorsevalley": {
@@ -84,6 +90,7 @@ presets = {
             (0,0,255),
             (255,0,255)
         ], increment = 0.01)
+        "showInPaletteList": True,
     },
 
     "rainbow": {
@@ -110,6 +117,7 @@ presets = {
             (0,0,0),
             (255,255,255)
         ], increment = 0.02)
+        "showInPaletteList": False,
     },
 
     "invertedgrayscale": {
@@ -126,6 +134,7 @@ presets = {
             ((14, 14, 14), 0.8),
             ((0, 0, 0), 1)
         ])
+        "showInPaletteList": False,
     },
 
     "hell": {
@@ -137,6 +146,7 @@ presets = {
             (0, 0, 0),
             (255, 0, 0)
         ], increment = 0.02)
+        "showInPaletteList": False,
     },
 
     "blackhole": {
@@ -152,5 +162,7 @@ presets = {
             (0,0,255),
             (255,0,255)
         ], increment = 0.024)
+        "showInPaletteList": False,
     },
+        "showInPaletteList": False,
 }

@@ -28,7 +28,8 @@ else:
     
     print("Palette preset list:")
     for key in presets.presets.keys():
-        print(" - " + key)
+        if presets.presets[key]["showInPaletteList"]:
+            print(" - " + key)
     selectedPaletteName = input("Enter palette preset name: ")
     palette = presets.presets[selectedPaletteName]["palette"]
 
