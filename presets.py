@@ -14,7 +14,7 @@ presets = {
         "showInPaletteList": True,
     },
 
-    "loopinggrayscale": {
+    "grayscalelooping": {
         "xWidth": 4,
         "yWidth": 4,
         "centrePos": (0,0),
@@ -27,7 +27,7 @@ presets = {
         "showInPaletteList": True,
     },
 
-    "invertedgrayscale": {
+    "grayscaleinverted": {
         "xWidth": 4.0,
         "yWidth": 4.0,
         "centrePos": (0, 0),
@@ -53,7 +53,7 @@ presets = {
         "showInPaletteList": True,
     },
 
-    "loopingred": {
+    "redlooping": {
         "xWidth": 4.0,
         "yWidth": 4.0,
         "centrePos": (0, 0),
@@ -79,7 +79,7 @@ presets = {
         "showInPaletteList": True,
     },
 
-    "loopingcyan": {
+    "cyanlooping": {
         "xWidth": 4.0,
         "yWidth": 4.0,
         "centrePos": (0, 0),
