@@ -1,7 +1,10 @@
 class Palette:
     coloursAtPercentages = [] # ((r, g, b), frac)
+    power = 1   # frac is raised to this power
 
-    def __init__(self, coloursAtPercentages, increment = 0):        
+    def __init__(self, coloursAtPercentages, power = 1, increment = 0):        
+        self.power = power
+        
         if increment == 0:
             self.coloursAtPercentages = coloursAtPercentages
         else:
@@ -14,7 +17,7 @@ class Palette:
                 
 
     def getColour(self, iteration, iterations):
-        frac = iteration / iterations
+        frac = (iteration / iterations) ** self.power
         i = 0
         while self.coloursAtPercentages[i][1] < frac and i < len(self.coloursAtPercentages):
             i += 1
