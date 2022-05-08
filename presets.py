@@ -1,21 +1,42 @@
 from palette import Palette
 
 presets = {
-    "default": {
+    "grayscale": {
         "xWidth": 4.0,
         "yWidth": 4.0,
         "centrePos": (0, 0),
 
         "palette": Palette([
             ((0, 0, 0), 0),
-            ((144, 144, 144), 0.1),
-            ((171, 171, 171), 0.2),
-            ((203, 203, 203), 0.4),
-            ((224, 224, 224), 0.6),
-            ((241, 241, 241), 0.8),
             ((255, 255, 255), 1)
-        ])
+        ], power = 0.6),
+
         "showInPaletteList": True,
+    },
+
+    "loopinggrayscale": {
+        "xWidth": 4,
+        "yWidth": 4,
+        "centrePos": (0,0),
+
+        "palette": Palette([
+            (0,0,0),
+            (255,255,255)
+        ], increment = 0.02),
+
+        "showInPaletteList": True,
+    },
+
+    "invertedgrayscale": {
+        "xWidth": 4.0,
+        "yWidth": 4.0,
+        "centrePos": (0, 0),
+
+        "palette": Palette([
+            ((255, 255, 255), 0),
+            ((0, 0, 0), 1)
+        ], power = 0.25),
+
         "showInPaletteList": True,
     },
 
@@ -26,13 +47,9 @@ presets = {
 
         "palette": Palette([
             ((0, 0, 0), 0),
-            ((144, 0, 0), 0.1),
-            ((171, 0, 0), 0.2),
-            ((203, 0, 0), 0.4),
-            ((224, 0, 0), 0.6),
-            ((241, 0, 0), 0.8),
             ((255, 0, 0), 1)
-        ])
+        ], power = 0.5),
+
         "showInPaletteList": True,
     },
 
@@ -44,7 +61,8 @@ presets = {
         "palette": Palette([
             (0, 0, 0),
             (255, 0, 0)
-        ], increment = 0.02)
+        ], increment = 0.02),
+
         "showInPaletteList": True,
     },
 
@@ -55,13 +73,9 @@ presets = {
 
         "palette": Palette([
             ((0, 0, 0), 0),
-            ((0, 144, 144), 0.1),
-            ((0, 171, 171), 0.2),
-            ((0, 203, 203), 0.4),
-            ((0, 224, 224), 0.6),
-            ((0, 241, 241), 0.8),
             ((0, 255, 255), 1)
-        ])
+        ], power = 0.5),
+        
         "showInPaletteList": True,
     },
 
@@ -73,23 +87,8 @@ presets = {
         "palette": Palette([
             (0, 0, 0),
             (0, 255, 255)
-        ], increment = 0.02)
-        "showInPaletteList": True,
-    },
+        ], increment = 0.02),
 
-    "seahorsevalley": {
-        "xWidth": 0.00865394444,
-        "yWidth": 0.00865394444,
-        "centrePos": (-0.746619028, 0.108934389),
-
-        "palette": Palette([
-            (255,0,0),
-            (255,255,0),
-            (0,255,0),
-            (0,255,255),
-            (0,0,255),
-            (255,0,255)
-        ], increment = 0.01)
         "showInPaletteList": True,
     },
 
@@ -105,35 +104,38 @@ presets = {
             (0,255,255),
             (0,0,255),
             (255,0,255)
-        ], increment = 0.028)
+        ], increment = 0.028),
+
+        "showInPaletteList": True,
     },
 
-    "loopinggrayscale": {
-        "xWidth": 4,
-        "yWidth": 4,
-        "centrePos": (0,0),
+    "seahorsevalleyrainbow": {
+        "xWidth": 0.00865394444,
+        "yWidth": 0.00865394444,
+        "centrePos": (-0.746619028, 0.108934389),
 
         "palette": Palette([
-            (0,0,0),
-            (255,255,255)
-        ], increment = 0.02)
+            (255,0,0),
+            (255,255,0),
+            (0,255,0),
+            (0,255,255),
+            (0,0,255),
+            (255,0,255)
+        ], increment = 0.01),
+
         "showInPaletteList": False,
     },
 
-    "invertedgrayscale": {
-        "xWidth": 4.0,
-        "yWidth": 4.0,
-        "centrePos": (0, 0),
+    "seahorsevalleygreen": {
+        "xWidth": 0.00865394444,
+        "yWidth": 0.00865394444,
+        "centrePos": (-0.745619028, 0.108934389),
 
         "palette": Palette([
-            ((255, 255, 255), 0),
-            ((112, 112, 112), 0.1),
-            ((84, 84, 84), 0.2),
-            ((52, 52, 52), 0.4),
-            ((31, 31, 31), 0.6),
-            ((14, 14, 14), 0.8),
-            ((0, 0, 0), 1)
-        ])
+            (40, 40, 0),
+            (30, 100, 30)
+        ], increment = 0.025),
+
         "showInPaletteList": False,
     },
 
@@ -145,7 +147,8 @@ presets = {
         "palette": Palette([
             (0, 0, 0),
             (255, 0, 0)
-        ], increment = 0.02)
+        ], increment = 0.02),
+
         "showInPaletteList": False,
     },
 
@@ -161,8 +164,21 @@ presets = {
             (0,255,255),
             (0,0,255),
             (255,0,255)
-        ], increment = 0.024)
+        ], increment = 0.024),
+
         "showInPaletteList": False,
     },
+
+    "paths": {
+        "xWidth": 1.496466788708517e-06,
+        "yWidth": 1.496466788708517e-06,
+        "centrePos": (-1.4742905518400689, -0.00341624010717357),
+
+        "palette": Palette([
+            (0, 0, 0),
+            (255, 255, 255)
+        ], increment = 0.125),
+
         "showInPaletteList": False,
+    }
 }
