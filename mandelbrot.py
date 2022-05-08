@@ -1,8 +1,6 @@
 from PIL import Image
-import math
 import time
 import presets
-from palette import Palette
 
 width = int(input("Enter width in pixels: "))
 height = width
