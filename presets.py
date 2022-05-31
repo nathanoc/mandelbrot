@@ -180,5 +180,22 @@ presets = {
         ], increment = 0.125),
 
         "showInPaletteList": False,
-    }
+    },
+
+    "faces": {
+        "xWidth": 8.731504408387991e-11,
+        "yWidth": 8.731504408387991e-11,
+        "centrePos": (-0.751086814629448, -0.02565834673221732),
+
+        "palette": Palette([
+            (0,0,255),
+            (255,0,255),
+            (255,0,0),
+            (255,255,0),
+            (0,255,0),
+            (0,255,255),
+        ], increment = 0.02),
+
+        "showInPaletteList": False,
+    },
 }
