@@ -51,3 +51,6 @@ docs/_build/
 
 # Images folder
 images/
+
+# Folder created (and hopefully also deleted) by the program. Here anyway just in case.
+tempFramesStorage/
