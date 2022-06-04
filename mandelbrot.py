@@ -1,6 +1,16 @@
 import time
 
-def generateMandelbrot(width, height, xWidth, yWidth, centrePos, iterations, palette, rowsPerOutput, startTime):
+def generateMandelbrot(settings):
+    width = settings.width
+    height = settings.height
+    xWidth = settings.xWidth
+    yWidth = settings.yWidth
+    centrePos = settings.centrePos
+    iterations = settings.iterations
+    palette = settings.palette
+    rowsPerOutput = settings.rowsPerOutput
+
+    startTime = time.time()
     pixels = []
     for yInt in range(int(width/2), int(-width/2), -1):
         y = centrePos[1] + (yInt / height * yWidth)
@@ -27,13 +37,16 @@ def generateMandelbrot(width, height, xWidth, yWidth, centrePos, iterations, pal
                 pixels.append(
                     palette.getColour(iteration, iterations)
                 )
-        if yInt % rowsPerOutput == 0 and height - int(height/2 + yInt) != 0:
-            rowsRemaining = int(height/2 + yInt)
-            rowsCompleted = height - int(height/2 + yInt)
-            
-            elapsed = time.time() - startTime
-            etr = elapsed / rowsCompleted * rowsRemaining
 
-            print(str(rowsRemaining) + " rows remaining.\tElapsed: " + str(elapsed) + "\tRemaining: " + str(etr))
-        
+        if rowsPerOutput != 0:
+            if yInt % rowsPerOutput == 0 and height - int(height/2 + yInt) != 0:
+                rowsRemaining = int(height/2 + yInt)
+                rowsCompleted = height - int(height/2 + yInt)
+                elapsed = time.time() - startTime
+                etr = elapsed / rowsCompleted * rowsRemaining
+                print(str(rowsRemaining) + " rows remaining.\tElapsed: " + str(elapsed) + "\tRemaining: " + str(etr))
+    
+    print("Generation complete")
+    elapsed = time.time() - startTime
+    print("Total elapsed: " + str(elapsed))
     return pixels
