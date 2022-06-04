@@ -4,7 +4,6 @@ from settings import Settings, inputSettings
 import os
 from mandelbrot import generateMandelbrot
 import shutil
-from pygifsicle import optimize
 
 INITIAL_WIDTH = 4
 
@@ -50,6 +49,5 @@ for i in range(fps * 3):
 if not os.path.exists("images"):
     os.mkdir("images")
 imageio.mimsave(f"images/{savedFileName}.gif", gifFrames, fps = fps)
-optimize(f"images/{savedFileName}.gif")
 shutil.rmtree("tempFramesStorage")
 print("GIF successfully saved.")
