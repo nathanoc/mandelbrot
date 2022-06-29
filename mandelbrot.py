@@ -21,17 +21,14 @@ def generateMandelbrot(settings):
             C = (x, y)
 
             for iteration in range(1, iterations + 1):
-                a = Z[0]
-                b = Z[1]
-                c = C[0]
-                d = C[1]
+                zx2 = Z[0] ** 2
+                zy2 = Z[1] ** 2
 
-                calc = (a ** 2 - b ** 2 + c, 2 * a * b + d)
-                Z = calc
+                Z = (zx2 - zy2 + C[0], 2 * Z[0] * Z[1] + C[1])
 
-                if Z[0] ** 2.0 + Z[1] ** 2.0 > 4.0:
+                if zx2 + zy2 > 4.0:
                     break
-            if Z[0] ** 2.0 + Z[1] ** 2.0 < 4.0:
+            if zx2 + zy2 < 4.0:
                 pixels.append((0,0,0))
             else:
                 pixels.append(
