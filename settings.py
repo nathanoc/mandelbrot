@@ -26,7 +26,7 @@ def inputSettings():
         print(" - " + key)
     print(" - custom")
     selectedPresetName = input("Enter preset name: ")
-    while not selectedPresetName in presets.presets.keys():
+    while (not selectedPresetName in presets.presets.keys()) and not selectedPresetName == "custom":
         selectedPresetName = input("Invalid preset name. Enter a valid preset name: ")
     if selectedPresetName != "custom":
         selectedPreset = presets.presets[selectedPresetName]
